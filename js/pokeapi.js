@@ -1,11 +1,18 @@
 const fetchPokemon = () => {
     const pokename = document.getElementById("pokename");
-    let pokeinput = pokename.value;
+    let pokeinput = pokename.value.toLowerCase();
 
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeinput}`;
     fetch(url).then((res) => {
         //console.log(res)
-        return res.json();
+        if(res.status != "200"){
+            console.log(res)
+            pokeImage("./images/llorando.gif")
+        }
+        else{
+            return res.json();
+        }
+        
     }).then((data) => {
         //console.log(data);
         let pokeImg = data.sprites.front_default;
