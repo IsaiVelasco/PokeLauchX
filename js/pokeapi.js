@@ -1,3 +1,6 @@
+const pokeimage = document.getElementById("pokeimage");
+const nombre = document.getElementById("nombre");
+const tipo = document.getElementById("tipo");
 const fetchPokemon = () => {
     const pokename = document.getElementById("pokename");
     let pokeinput = pokename.value.toLowerCase();
@@ -7,28 +10,35 @@ const fetchPokemon = () => {
         //console.log(res)
         if(res.status != "200"){
             console.log(res)
-            pokeImage("./images/llorando.gif")
+            noEncontrado();
         }
         else{
             return res.json();
         }
         
     }).then((data) => {
-        //console.log(data);
-        let pokeImg = data.sprites.front_default;
-        //console.log(pokeImg);
-        pokeImage(pokeImg);
+        console.log(data);                   
+        mostrarPoke(data);
     });
 }
-//fetchPokemon();
 
-const pokeImage = (url) => {
-    const pokeimage = document.getElementById("pokeimage");
-    pokeimage.src = url;
+
+
+
+const mostrarPoke = (data) => {
+    pokeimage.src = data.sprites.front_default;
+    nombre.innerHTML = '<strong>'+data.name+'</strong>';
+    data.types.forEach(obj => {
+        
+    });
+ 
+    data.types.forEach(element => {
+        tipo.innerHTML += `<div class="col"><h6> ${element.type.name}</h6></div>`;
+    });
+    
 }
 
-const imprimir = () => {
-    const pokename = document.getElementById("pokename");
-    let pokeinput = pokename.value;
-    console.log("Hola " + pokeinput);
+const noEncontrado = () => {    
+    pokeimage.src = './images/llorando.gif';
+    nombre.innerHTML = '';
 }
