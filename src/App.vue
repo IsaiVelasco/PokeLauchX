@@ -23,6 +23,6 @@ body {
   padding: 0;
 }
 #app {
-  background: radial-gradient(#ffbf0b, #e20000);
+  background: radial-gradient(#d3e8ff, #1e79cf);
 }
 </style>

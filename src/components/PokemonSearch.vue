@@ -2,7 +2,7 @@
   <div class="searchbar">
     <form @submit.prevent="setPokemonUrl">
       <input type="text" placeholder="Nombre / Número" v-model="searchvalue">
-      <p class="legenda">Ingresa el nombre o número de Pokemon</p>
+      
     </form>
     <i class="fas fa-search" @click="setPokemonUrl"></i>
   </div>
