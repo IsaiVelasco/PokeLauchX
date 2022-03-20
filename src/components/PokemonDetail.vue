@@ -7,20 +7,20 @@
       <div v-if="pokemon" class="data card-body">
         <h2 class="card-title">{{ pokemon.name }}</h2>
         <div class="property">
-          <div class="left destaq">Base Experience/Experiencia</div>
+          <div class="left destaq">Experiencia</div>
           <div class="right">{{ pokemon.base_experience }} XP</div>
         </div>
 
         <div class="property">
-          <div class="left destaq">Height/Altura</div>
+          <div class="left destaq">Altura</div>
           <div class="right">{{ pokemon.height / 10 }} m</div>
         </div>
         <div class="property">
-          <div class="left destaq">Weight/Peso</div>
+          <div class="left destaq">Peso</div>
           <div class="right">{{ pokemon.weight / 10 }} kg</div>
         </div>
         
-        <div class="types">
+        <div class="types property">
           <div class="left destaq">Tipo </div>
           <div
             class="type"
@@ -32,8 +32,9 @@
             </span>
           </div>
         </div>
-        <h3>Abilities/Habilidades</h3>
-        <div class="abilities">
+        
+        <div class="abilities property">
+          <div class="left destaq">Habilidades </div>
           <div
             class="ability"
             v-for="(value, index) in pokemon.abilities"
@@ -47,10 +48,9 @@
         </div>
       </div>
       <h2 v-else>
-        The pokemon was not found / <br />
-        Pokemon nÃ£o encontrado
+        El pokemon no fue encontrado
       </h2>
-      <button class="close" @click="closeDetail">Close / Fechar</button>
+      <button class="close" @click="closeDetail">Cerrar</button>
     </div>
     <i v-else class="fas fa-spinner fa-spin"></i>
   </div>
@@ -137,8 +137,8 @@ export default {
   .fairy {
     background: rgb(248, 165, 237) !important;
   }
-  .eletric {
-    background: rgb(255, 217, 1) !important;
+  .electric {
+    background: rgb(255, 187, 0) !important;
   }
   .rock {
     background: rgb(88, 95, 100) !important;
@@ -249,10 +249,10 @@ h4 {
   }
 }
 .ability {
-  color: rgb(10, 119, 10);
-  margin: 0 10px 10px 0;
+  color: rgb(58, 118, 167);
+  margin: 0 10px 10px 20px;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 0px 5px 0 5px;
   font-weight: bold;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -266,7 +266,7 @@ h4 {
 .close {
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 18px;
   background-color: #c73015;
   color: #efefef;
   padding: 10px 20px;
