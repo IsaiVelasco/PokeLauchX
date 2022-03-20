@@ -32,7 +32,6 @@ export default {
       pokemons: [],
       nextUrl: "",
       currentUrl: "",
-      clase: "",
     };
   },
   methods: {
