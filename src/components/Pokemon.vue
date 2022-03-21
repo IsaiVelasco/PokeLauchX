@@ -4,7 +4,7 @@
       alt="Vue logo"
       src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
     >
-    <h1>Elegant Pokedex</h1>
+    <h1>LaunchX Pokedex</h1>
     <PokemonSearch :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl"/>
     <PokemonList :imageUrl="imageUrl" :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl"/>
     <PokemonDetail
